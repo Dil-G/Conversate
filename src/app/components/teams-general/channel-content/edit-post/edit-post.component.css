@@ -1,0 +1,41 @@
+.add-post {
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.btn{
+    background-color: #7073bc;
+    padding: 5px;
+    margin: 3px;
+}
+
+.clr-col-lg-12 {
+    margin-right: 100px;
+  }
+  
+  .clr-row {
+    height: 100%;
+    position: relative;
+    display: flex;
+  }
+  
+  .heading {
+    display: flex;
+    margin-left: 60px;
+    padding: 0 30px;
+    flex-direction: row-reverse
+  }
+  
+  .mat-icon {
+    margin-right: 5px;
+  }
+
+  .clr-input{
+    width: 100%;
+  }
+
+  .btn{
+    margin-left: auto;
+    border: none;
+  }

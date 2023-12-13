@@ -1,0 +1,34 @@
+<!-- navbar.component.html -->
+<clr-vertical-nav>
+  <div class="card">
+    <div class="card-header">
+      <div class="heading">
+        <div cds-text="subsection">Teams</div>
+      </div>
+    </div>
+    <div class="card-header">
+      <div class="heading">
+        <div cds-text="caption">Your teams</div>
+      </div>
+    </div>
+
+    <div *ngFor="let channel of channels">
+      <div
+        clrVerticalNavGroupHeader
+        (click)="toggleSubMenu(channel.id)"
+        class="navbar-menu"
+      >
+        <mat-icon class="icon" [class.rotated]="subMenuStates[channel.id]">keyboard_arrow_down</mat-icon>
+        {{ channel.name }}
+      </div>
+
+      <clr-vertical-nav-group-children *ngIf="subMenuStates[channel.id]">
+        <!-- Add your submenu items here -->
+        <a
+          clrVerticalNavLink
+          (click)="selectChannel(channel.id)"
+        >General</a>
+      </clr-vertical-nav-group-children>
+    </div>
+  </div>
+</clr-vertical-nav>

@@ -1,0 +1,29 @@
+.clr-vertical-nav{
+    height: 100%;
+    padding: 10px;
+}
+
+:host {
+    display: block;
+  }
+  
+  clr-vertical-nav {
+    height: 100vh; /* Adjust height as needed */
+  }
+
+  .navbar-menu{
+    margin: 10px;
+  }
+  .icon{
+    padding-top: 5px;
+  }
+
+  .card{
+    margin-top: -5px;
+    padding: 15px;
+    height: 100%;
+  }
+
+  .sub-menu{
+    margin-left: 20px;
+  }

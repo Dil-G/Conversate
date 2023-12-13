@@ -1,0 +1,32 @@
+<div class="clr-row">
+    <div class="clr-col-lg-12">
+      <div >
+        <div class="heading">
+          <div class="clr-row">
+
+            <div class="clr-col-2">
+              <span
+                ><button
+                  type="button"
+                  (click)="closeTextBox()"
+                  class="btn btn-icon btn-primary"
+                  aria-label="settings"
+                >
+                  <mat-icon>close</mat-icon>
+                </button></span
+              >
+            </div>
+          </div>
+        </div>
+        <div class="card-block">
+            <form class="clr-form" >
+                <input *ngIf="message.hasOwnProperty('title')" type="text" id="subject" placeholder="Add a Subject" class="clr-input" [(ngModel)]="message.title" [ngModelOptions]="{standalone: true}" />
+                <input type="text" id="message" placeholder="Type a message" class="clr-input" [(ngModel)]="message.messageBody" [ngModelOptions]="{standalone: true}"  />
+                <button type="submit" class="btn btn-info" (click)="postData()">
+                  Post
+                </button>
+              </form>
+        </div>
+      </div>
+    </div>
+  </div>

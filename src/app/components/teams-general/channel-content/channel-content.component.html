@@ -1,0 +1,143 @@
+<div class="channel-content">
+  <div class="clr-row-1">
+    <div class="clr-col-lg-12" *ngFor="let message of messages">
+      <div class="card">
+        <div class="card-header">
+          <div class="heading">
+            <mat-icon>face</mat-icon>
+            {{ message.username }}
+            <span cds-text="smallcaption" style="margin-left: 5px">{{
+              convertDateField(message.date)
+            }}</span>
+
+            <div class="menu-bar" *ngIf="message.sender == user">
+              <button
+                class="btn"
+                (click)="openEdit(message.id)"
+                *ngIf="!message.isDeleted"
+              >
+                <mat-icon>edit</mat-icon>
+              </button>
+              <button
+                class="btn"
+                (click)="deleteReply(message)"
+                *ngIf="!message.isDeleted"
+              >
+                <mat-icon>delete</mat-icon>
+              </button>
+            </div>
+          </div>
+          <div *ngIf="editID == message.id">
+            <app-edit-post
+              (dataEvent)="getMessages(channelSelect)"
+              (postMessage)="postMessages($event)"
+              (closeEdit)="closeEdit()"
+              [editInput]="editInput"
+              [message]="message"
+            ></app-edit-post>
+          </div>
+          <div *ngIf="!message.isDeleted" class="messages">
+            <div cds-text="card-title" *ngIf="editID != message.id">
+              <b>{{ message.title }}</b>
+            </div>
+            <h4 class="caption" *ngIf="editID != message.id">
+              {{ message.messageBody }}
+            </h4>
+          </div>
+          <div *ngIf="message.isDeleted" class="messages">Message is deleted</div>
+        </div>
+        <div *ngIf="message.replies">
+          <div *ngFor="let reply of message.replies">
+            <div class="card-header">
+              <div class="heading">
+                <mat-icon>face</mat-icon>
+                {{ reply.username }}
+                <span cds-text="smallcaption"  style="margin-left: 5px">{{
+                  convertDateField(reply.date)
+                }}</span>
+                <div class="menu-bar" *ngIf="reply.sender == user">
+                  <button
+                    class="btn"
+                    (click)="openEditReply(reply.id)"
+                    *ngIf="!reply.isDeleted"
+                  >
+                    <mat-icon>edit</mat-icon>
+                  </button>
+                  <button
+                    class="btn"
+                    (click)="deleteReply(reply)"
+                    *ngIf="!reply.isDeleted"
+                  >
+                    <mat-icon>delete</mat-icon>
+                  </button>
+                </div>
+              </div>
+              <div *ngIf="editReplyID == reply.id">
+                <app-edit-post
+                  (dataEvent)="getMessages(channelSelect)"
+                  (postMessage)="postMessages($event)"
+                  (closeEdit)="closeEdit()"
+                  [editInput]="editInput"
+                  [message]="reply"
+                ></app-edit-post>
+              </div>
+              <div *ngIf="!reply.isDeleted">
+                <div
+                  cds-text="caption"
+                  class="replies"
+                  *ngIf="editReplyID != reply.id"
+                >
+                  {{ reply.messageBody }}
+                </div>
+              </div>
+              <div cds-text="subsection" class="replies" *ngIf="reply.isDeleted">
+                Reply is deleted
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="card-block">
+          <div class="reply-header">
+          <button
+            class="btn reply-button"
+            (click)="openReply(message.id)"
+            *ngIf="passedID != message.id"
+          >
+            Reply
+          </button>
+          </div>
+          <div *ngIf="passedID == message.id">
+            <form class="clr-form">
+              <div class="clr-row">
+                <div class="clr-col-11">
+                  <input
+                    type="text"
+                    id="message"
+                    placeholder="Reply"
+                    class="clr-input"
+                  />
+                </div>
+                <div class="clr-col-1">
+                  <button
+                    type="submit"
+                    class="btn send-message"
+                    (click)="postReplies(message)"
+                  >
+                    <mat-icon>play_arrow</mat-icon>
+                  </button>
+                </div>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div class="clr-row-2">
+    <app-add-post
+      (dataEvent)="getMessages(channelSelect)"
+      (postMessage)="postMessages($event)"
+    ></app-add-post>
+  </div>
+</div>

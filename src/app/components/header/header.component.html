@@ -1,0 +1,35 @@
+<header class="header-6">
+
+  <div class="icons">
+    <mat-icon>keyboard_arrow_left</mat-icon>
+    <mat-icon>keyboard_arrow_right</mat-icon>
+  </div>
+
+  <form class="search">
+    <label for="search_input">
+      <input
+        id="search_input"
+        type="text"
+        placeholder="Search for keywords..."
+      />
+    </label>
+  </form>
+  <div class="header-actions">
+    <a href="javascript://" class="nav-link nav-icon-text">
+      {{userData?.username}}
+      <button type="button" class="btn" (click)="openDropdown()">
+        
+        <mat-icon>face</mat-icon>
+        
+      </button>
+    </a>
+  </div>
+
+  <div *ngIf="dropdownOpen">
+    <div class="dropdown bottom-right open">
+      <div class="dropdown-menu">
+        <div *ngFor="let user of users" class="dropdown-item" (click)="selectUser(user.id)">{{ user.username }}</div>
+      </div>
+    </div>
+  </div>
+</header>

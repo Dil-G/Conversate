@@ -1,0 +1,100 @@
+.main-container .content-container .content-area{
+  overflow-y:hidden
+}
+
+.clr-col-lg-12 {
+  margin-right: 100px;
+}
+
+.clr-row {
+  height: 100%;
+  position: relative;
+  overflow-y: hidden;
+}
+
+.heading {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  color: rgb(109, 114, 114);
+}
+
+.mat-icon {
+  margin-right: 5px;
+  color: #63669d;
+}
+
+.add-post {
+    position: absolute;
+    bottom: 0;
+}
+
+.channel-content{
+  background-color: #f0f0f0;
+  display: flex;
+  flex-direction: column;
+  height: 80vh; 
+  
+}
+
+.main-container .content-container .content-area {
+  padding: -100px;
+  overflow-y: hidden
+}
+
+.clr-row-1{
+  padding: 0px 80px 20px 80px;
+
+  flex: 1;
+  overflow-y: auto; /* Enable vertical scrolling */
+  padding: 10px;
+  height:75%;
+  overflow-x: hidden
+}
+
+.clr-row-2 {
+  position: sticky;
+  bottom: 0;
+  background-color: #ffffff;
+  padding: 10px;
+  padding-bottom: -100px;
+}
+
+.btn{
+
+  border: none;
+  background-color: transparent;
+}
+.reply-button{
+  width: 100%;
+  text-align: left;
+}
+
+#subject{
+  width: 100%;
+}
+
+.send-message{
+  border: none;
+}
+
+.replies{
+  margin-left: 30px;
+  margin-top: 10px;
+}
+
+.clr-input{
+  width: 100%;
+}
+
+.menu-bar{
+  margin-left: auto
+}
+
+.card{
+  border-radius: 5px;
+}
+
+.messages{
+  margin-left: 15px;
+}

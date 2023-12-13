@@ -1,0 +1,65 @@
+.add-post {
+    position: absolute;
+    bottom: 0;
+    
+}
+
+.btn{
+  border-radius: 5px;
+    background-color: #63669d;
+    
+    margin: 3px;
+    margin-left: 16px;
+    color: aliceblue;
+}
+
+.clr-col-lg-12 {
+    margin-right: 100px;
+  }
+  
+  .clr-row {
+    padding: 0px 80px 20px 80px;
+    height: 100%;
+    position: relative;
+  }
+  
+  .heading {
+    display: flex;
+    align-items: center;
+    margin-bottom: 10px;
+  }
+  
+  .mat-icon {
+    margin-right: 5px;
+  }
+
+  .clr-input{
+    width: 100%;
+    border-bottom: .2px solid;
+    padding: 5px;
+    margin: 5px;
+    margin-top: 15px;
+  }
+
+  .card-block {
+    position: relative;
+    padding: 10px;
+    margin-top: 30px;
+  }
+  .card-header {
+    position: relative;
+    padding: 10px;
+    height: 8vh;
+  }
+
+  .close-btn {
+    position: absolute;
+    top: 0;
+    right: 0;
+    margin: 10px; 
+  }
+  
+  .btn-icon{
+    padding-top: 5px;
+    padding-left: 15px;
+  }
